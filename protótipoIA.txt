@@ -1,0 +1,31 @@
+Aula 1 — Prototipação com IA e UI/UX
+
+Produto: ListaFácil — Aplicativo de Lista de Tarefas
+
+01. Tema e problema
+Tema: Organização de tarefas do dia a dia.
+Problema: Muitas pessoas esquecem tarefas ou têm dificuldade para organizar sua rotina.
+Solução: Um aplicativo simples para adicionar, visualizar, concluir e excluir tarefas.
+Público-alvo: Estudantes e jovens adultos que desejam organizar suas atividades pessoais, acadêmicas e profissionais.
+
+Objetivo do MVP: Facilitar a organização diária com poucas funcionalidades e uso intuitivo.
+02. Persona, histórias de usuário e escopo
+Persona
+Nome: Mariana Oliveira, 19 anos.
+Perfil: Estudante que precisa conciliar estudos e atividades pessoais.
+Necessidade: Organizar sua rotina e não esquecer tarefas.
+Dificuldade: Esquece atividades e considera aplicativos complexos difíceis de usar.
+Histórias de usuário
+- HU01: Como Mariana, quero adicionar tarefas para registrar o que preciso fazer.
+- HU02: Como Mariana, quero visualizar minhas tarefas para me organizar.
+- HU03: Como Mariana, quero marcar tarefas como concluídas para acompanhar meu progresso.
+- HU04: Como Mariana, quero excluir tarefas para remover as desnecessárias.
+Escopo do MVP — MoSCoW
+- Must (obrigatório): Adicionar, visualizar, concluir e excluir tarefas.
+- Should (importante): Editar tarefas e separar pendentes das concluídas.
+- Could (desejável): Personalizar as cores da lista.
+- Won't (fora desta versão): Login, notificações e sincronização entre dispositivos.
+Hipóteses a verificar
+- Os usuários esquecem tarefas durante a rotina.
+- Uma lista simples pode facilitar a organização.
+- Poucas funcionalidades tornam o aplicativo mais fácil de usar.
