@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ListaFácil — Protótipo de telas</title>
+<style>
+:root{--orange:#f47721;--dark:#bf4f0b;--cream:#fff7ef;--ink:#3d2d23;--muted:#8c7b70;--line:#f0dfd1;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#fff4e9,#fffdfa);font-family:Arial,sans-serif;color:var(--ink);padding:24px}
+.wrap{max-width:1000px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:20px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:46px;height:46px;border-radius:14px;background:var(--orange);color:white;display:grid;place-items:center;font-size:27px;font-weight:bold}
+h1{margin:0;color:var(--dark);font-size:25px}.sub{margin:4px 0 0;color:var(--muted);font-size:13px}
+.pill{background:#ffe8d5;color:#a94408;border-radius:30px;padding:8px 13px;font-size:12px;font-weight:bold}
+.nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}.nav button,.btn{border:0;border-radius:10px;padding:11px 14px;font-weight:bold;cursor:pointer}
+.nav button{background:#fff;border:1px solid var(--line);color:var(--muted)}.nav button.active,.btn{background:var(--orange);color:#fff}.nav button:hover{border-color:var(--orange)}
+.screen{display:none}.screen.active{display:block}.layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(230px,.8fr);gap:18px;align-items:start}
+.phone{max-width:560px;width:100%;margin:auto;border:2px solid var(--orange);border-radius:25px;background:#fff;overflow:hidden;box-shadow:0 14px 35px #9c5c2820}
+.status{display:flex;justify-content:space-between;padding:13px 18px 8px;font-size:11px;color:#78665b}
+.apphead{display:flex;align-items:center;gap:10px;padding:12px 18px 18px}.checklogo{width:34px;height:34px;border-radius:50%;background:var(--orange);color:white;display:grid;place-items:center;font-size:22px}
+.apphead strong{color:var(--dark);font-size:17px}.apphead small{display:block;color:var(--muted);margin-top:3px}
+.content{padding:0 18px 22px}.title-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:4px 0 16px}.title-row h2{font-size:20px;margin:0}.count{font-size:12px;color:var(--muted)}
+.inputrow{display:flex;gap:8px;margin:12px 0 18px}.fakeinput{flex:1;border:1px solid var(--line);border-radius:10px;padding:12px;color:#a39387;font-size:13px}.btn{font-size:13px}.task{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:11px;padding:12px;margin:8px 0;font-size:13px;background:#fffdfa}.boxcheck{width:18px;height:18px;border:1.5px solid #bca99b;border-radius:5px;display:inline-grid;place-items:center;flex-shrink:0}.task.done{color:#a79b91;text-decoration:line-through;background:#fff8f1}.task.done .boxcheck{background:var(--orange);border-color:var(--orange);color:white;text-decoration:none}
+.trash{margin-left:auto;color:var(--orange);font-size:18px}.bottomnav{border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:13px 6px;color:var(--muted);font-size:11px}.bottomnav span:first-child{color:var(--orange);font-weight:bold}
+.info{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}.info h3{margin:0 0 8px;color:var(--dark)}.info p,.info li{font-size:14px;line-height:1.5;color:#6f5d51}.info ul{padding-left:19px}.actions{display:flex;justify-content:space-between;gap:10px;margin-top:15px}.btn.secondary{background:#fff0e4;color:var(--dark)}.btn:focus-visible,.nav button:focus-visible{outline:3px solid #f8bd8c;outline-offset:2px}
+.option{border:1px solid var(--line);border-radius:12px;padding:13px;margin:9px 0;background:#fffdfa}.color-dots{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}.dot{width:34px;height:34px;border-radius:50%;border:3px solid white;box-shadow:0 0 0 1px var(--line)}.dot.selected{box-shadow:0 0 0 3px var(--orange)}
+.outside{display:grid;gap:12px}.outside .option{display:flex;gap:12px;align-items:center}.muted-note{font-size:12px;color:var(--muted)}
+@media(max-width:700px){body{padding:14px}.layout{grid-template-columns:1fr}.info{order:-1}.top{align-items:flex-start}.nav button{flex:1}.phone{max-width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><div class="logo">✓</div><div><h1>ListaFácil</h1><p class="sub">Protótipo navegável · wireframe em tons de laranja</p></div></div>
+    <span class="pill">Amostra das telas — sem programação funcional</span>
+  </header>
+  <nav class="nav" aria-label="Navegar entre telas">
+    <button class="active" data-screen="must-add">Must · Adicionar</button>
+    <button data-screen="must-list">Must · Visualizar</button>
+    <button data-screen="must-done">Must · Concluir</button>
+    <button data-screen="must-delete">Must · Excluir</button>
+    <button data-screen="should-edit">Should · Editar</button>
+    <button data-screen="should-filter">Should · Separar</button>
+    <button data-screen="could-colors">Could · Cores</button>
+    <button data-screen="wont">Won't · Futuro</button>
+  </nav>
+
+  <section id="must-add" class="screen active">
+    <div class="layout">
+      <div class="phone"><div class="status"><span>9:41</span><span>● ● ▰</span></div>
+        <div class="apphead"><div class="checklogo">✓</div><div><strong>ListaFácil</strong><small>Organize seu dia!</small></div></div>
+        <div class="content"><div class="title-row"><h2>Adicionar tarefa</h2><span class="count">Must</span></div>
+          <div class="option" style="text-align:center;padding:25px 12px"><div style="font-size:55px;color:#f6a263">☷</div><p style="color:#8c7b70">O que você precisa fazer hoje?</p></div>
+          <div class="inputrow"><div class="fakeinput">Digite uma nova tarefa...</div></div>
+          <button class="btn" onclick="go('must-list')">＋ Adicionar tarefa</button>
+        </div><div class="bottomnav"><span>⌂ Início</span><span>✓ Concluídas</span><span>▤ Excluir</span></div>
+      </div>
+      <aside class="info"><h3>Must — Adicionar tarefa</h3><p>Primeira tela do aplicativo. O usuário registra uma atividade usando o campo de texto e o botão principal.</p><ul><li>Campo para escrever a tarefa</li><li>Botão principal em laranja</li><li>Visual limpo e simples</li></ul><div class="actions"><button class="btn secondary" onclick="go('wont')">Anterior</button><button class="btn" onclick="go('must-list')">Próxima tela →</button></div></aside>
+    </div>
+  </section>
+
+  <section id="must-list" class="screen">
+    <div class="layout"><div class="phone"><div class="status"><span>9:41</span><span>● ● ▰</span></div><div class="apphead"><div class="checklogo">✓</div><div><strong>ListaFácil</strong><small>Organize seu dia!</small></div></div><div class="content"><div class="title-row"><h2>Minhas tarefas</h2><span class="count">3 pendentes</span></div>
+      <div class="task"><span class="boxcheck"></span>Estudar matemática</div><div class="task"><span class="boxcheck"></span>Fazer exercícios</div><div class="task done"><span class="boxcheck">✓</span>Ler um livro</div><div class="task"><span class="boxcheck"></span>Organizar o quarto</div><button class="btn" style="margin-top:12px" onclick="go('must-add')">＋ Adicionar tarefa</button>
+    </div><div class="bottomnav"><span>⌂ Início</span><span>✓ Concluídas</span><span>▤ Excluir</span></div></div>
+      <aside class="info"><h3>Must — Visualizar tarefas</h3><p>Mostra as atividades cadastradas e seu estado. A tela ajuda o usuário a entender o que ainda precisa fazer.</p><ul><li>Lista de tarefas</li><li>Indicação visual de concluídas</li><li>Acesso para adicionar outra tarefa</li></ul><div class="actions"><button class="btn secondary" onclick="go('must-add')">← Anterior</button><button class="btn" onclick="go('must-done')">Próxima tela →</button></div></aside></div>
+  </section>
+
+  <section id="must-done" class="screen">
+    <div class="layout"><div class="phone"><div class="status"><span>9:41</span><span>● ● ▰</span></div><div class="apphead"><div class="checklogo">✓</div><div><strong>ListaFácil</strong><small>Organize seu dia!</small></div></div><div class="content"><div class="title-row"><h2>Minhas tarefas</h2><span class="count">2 pendentes</span></div>
+      <div class="task done"><span class="boxcheck">✓</span>Estudar matemática</div><div class="task"><span class="boxcheck"></span>Fazer exercícios</div><div class="task done"><span class="boxcheck">✓</span>Ler um livro</div><div class="task"><span class="boxcheck"></span>Organizar o quarto</div><p class="muted-note">Tarefa marcada como concluída aparece riscada.</p>
+    </div><div class="bottomnav"><span>⌂ Início</span><span>✓ Concluídas</span><span>▤ Excluir</span></div></div>
+      <aside class="info"><h3>Must — Concluir tarefa</h3><p>O estado concluído é representado por uma marca de seleção e texto riscado, não apenas por uma mudança de cor.</p><ul><li>Caixa de seleção</li><li>Texto riscado para indicar conclusão</li><li>Visual consistente com a lista</li></ul><div class="actions"><button class="btn secondary" onclick="go('must-list')">← Anterior</button><button class="btn" onclick="go('must-delete')">Próxima tela →</button></div></aside></div>
+  </section>
+
+  <section id="must-delete" class="screen">
+    <div class="layout"><div class="phone"><div class="status"><span>9:41</span><span>● ● ▰</span></div><div class="apphead"><div class="checklogo">✓</div><div><strong>ListaFácil</strong><small>Organize seu dia!</small></div></div><div class="content"><div class="title-row"><h2>Minhas tarefas</h2><span class="count">4 tarefas</span></div>
+      <div class="task"><span class="boxcheck"></span>Estudar matemática <span class="trash">×</span></div><div class="task"><span class="boxcheck"></span>Fazer exercícios <span class="trash">×</span></div><div class="task done"><span class="boxcheck">✓</span>Ler um livro <span class="trash">×</span></div><div class="task"><span class="boxcheck"></span>Organizar o quarto <span class="trash">×</span></div><p class="muted-note">O ícone × representa a ação de excluir.</p>
+    </div><div class="bottomnav"><span>⌂ Início</span><span>✓ Concluídas</span><span>▤ Excluir</span></div></div>
+      <aside class="info"><h3>Must — Excluir tarefa</h3><p>O usuário consegue remover uma atividade que não precisa mais manter na lista.</p><ul><li>Ação de excluir ao lado de cada tarefa</li><li>Botão claramente identificável</li><li>Espaçamento para evitar toques acidentais</li></ul><div class="actions"><button class="btn secondary" onclick="go('must-done')">← Anterior</button><button class="btn" onclick="go('should-edit')">Próxima tela →</button></div></aside></div>
+  </section>
+
+  <section id="should-edit" class="screen">
+    <div class="layout"><div class="phone"><div class="status"><span>9:41</span><span>● ● ▰</span></div><div class="apphead"><div class="checklogo">←</div><div><strong>Editar tarefa</strong><small>Should · melhoria futura</small></div></div><div class="content"><div class="title-row"><h2>Editar tarefa</h2></div><p style="font-size:13px">Nome da tarefa</p><div class="fakeinput">Fazer exercícios</div><p style="font-size:13px;margin-top:20px">Status</p><div class="option">◉ &nbsp; Pendente</div><div class="option">○ &nbsp; Concluída</div><button class="btn" style="width:100%;margin-top:18px" onclick="go('should-filter')">Salvar alterações</button></div><div class="bottomnav"><span>⌂ Início</span><span>✓ Concluídas</span><span>▤ Excluir</span></div></div>
+      <aside class="info"><h3>Should — Editar tarefa</h3><p>Tela para alterar o texto ou o estado de uma atividade. É importante, mas não essencial para a primeira versão.</p><div class="actions"><button class="btn secondary" onclick="go('must-delete')">← Anterior</button><button class="btn" onclick="go('should-filter')">Próxima tela →</button></div></aside></div>
+  </section>
+
+  <section id="should-filter" class="screen">
+    <div class="layout"><div class="phone"><div class="status"><span>9:41</span><span>● ● ▰</span></div><div class="apphead"><div class="checklogo">✓</div><div><strong>ListaFácil</strong><small>Organize seu dia!</small></div></div><div class="content"><div class="title-row"><h2>Minhas tarefas</h2></div><div class="inputrow"><span class="pill">Pendentes</span><span class="fakeinput" style="text-align:center">Concluídas</span></div><p style="font-size:13px;font-weight:bold">Tarefas pendentes</p><div class="task"><span class="boxcheck"></span>Estudar matemática</div><div class="task"><span class="boxcheck"></span>Fazer exercícios</div><p style="font-size:13px;font-weight:bold;margin-top:18px">Tarefas concluídas</p><div class="task done"><span class="boxcheck">✓</span>Ler um livro</div><div class="task done"><span class="boxcheck">✓</span>Organizar o quarto</div></div><div class="bottomnav"><span>⌂ Início</span><span>✓ Concluídas</span><span>▤ Excluir</span></div></div>
+      <aside class="info"><h3>Should — Separar tarefas</h3><p>Apresenta as atividades pendentes e concluídas em grupos separados para facilitar a leitura.</p><div class="actions"><button class="btn secondary" onclick="go('should-edit')">← Anterior</button><button class="btn" onclick="go('could-colors')">Próxima tela →</button></div></aside></div>
+  </section>
+
+  <section id="could-colors" class="screen">
+    <div class="layout"><div class="phone"><div class="status"><span>9:41</span><span>● ● ▰</span></div><div class="apphead"><div class="checklogo">←</div><div><strong>Personalizar</strong><small>Could · recurso opcional</small></div></div><div class="content"><div class="title-row"><h2>Escolha uma cor</h2></div><p style="font-size:13px;color:#8c7b70">Cor principal do aplicativo</p><div class="color-dots"><span class="dot selected" style="background:#f47721"></span><span class="dot" style="background:#ffb66e"></span><span class="dot" style="background:#ed7777"></span><span class="dot" style="background:#78a4df"></span><span class="dot" style="background:#8dcf9c"></span><span class="dot" style="background:#66c7bc"></span><span class="dot" style="background:#bd86c8"></span></div><button class="btn" style="width:100%" onclick="go('wont')">Salvar preferência</button></div></div>
+      <aside class="info"><h3>Could — Personalizar cores</h3><p>Recurso opcional para uma versão futura. O protótipo mostra como seria a escolha de uma cor.</p><div class="actions"><button class="btn secondary" onclick="go('should-filter')">← Anterior</button><button class="btn" onclick="go('wont')">Próxima tela →</button></div></aside></div>
+  </section>
+
+  <section id="wont" class="screen">
+    <div class="layout"><div class="phone"><div class="status"><span>9:41</span><span>● ● ▰</span></div><div class="apphead"><div class="checklogo">✓</div><div><strong>ListaFácil</strong><small>Recursos fora desta versão</small></div></div><div class="content"><div class="title-row"><h2>Para o futuro</h2><span class="count">Won't</span></div><div class="option">♧ &nbsp; Notificações e lembretes</div><div class="option">♙ &nbsp; Login e cadastro de usuários</div><div class="option">⟳ &nbsp; Sincronização entre dispositivos</div><p class="muted-note">Essas funcionalidades ficam fora do MVP atual e podem ser consideradas em versões futuras.</p></div></div>
+      <aside class="info"><h3>Won't — Fora desta versão</h3><p>Esta tela registra visualmente os recursos que não serão desenvolvidos no MVP, para manter o projeto pequeno e viável.</p><div class="actions"><button class="btn secondary" onclick="go('could-colors')">← Anterior</button><button class="btn" onclick="go('must-add')">Voltar ao início ↻</button></div></aside></div>
+  </section>
+</div>
+<script>
+function go(id){
+ document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));
+ document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.screen===id));
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.screen)));
+</script>
+</body>
+</html>
